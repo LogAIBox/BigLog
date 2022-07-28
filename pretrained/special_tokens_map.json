@@ -1,0 +1,13 @@
+{
+    "unk_token": "[UNK]",
+    "sep_token": "[SEP]",
+    "pad_token": "[PAD]",
+    "cls_token": "[CLS]",
+    "mask_token": "[MASK]",
+    "additional_special_tokens": ["[NUM]",
+        "[TIMESTAMP]",
+        "[IP]",
+        "[CODE]",
+        "[FILE]"
+    ]
+}
