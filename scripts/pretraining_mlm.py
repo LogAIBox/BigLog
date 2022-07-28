@@ -167,4 +167,4 @@ if __name__=='__main__':
 
 
     #测试
-    #pretraining(4,'/home/l00650981/logModel/Pretrain/dataset/new_loghub_MLM_eval.log','/home/l00650981/logModel/Pretrain/dataset/new_loghub_MLM_eval.log','/home/l00650981/bert-base-uncased-biglog-tokenizer/','/home/l00650981/bert-base-uncased-biglog-initial/','/home/l00650981/logModel/',1,0.0001,0.01,16,0.05,10000,100,0.15,-1)
+    #pretraining(4,'/data/logModel/Pretrain/dataset/new_loghub_MLM_eval.log','/data/logModel/Pretrain/dataset/new_loghub_MLM_eval.log','/data/pretrained/','/data/pretrained/','/data/logModel/',1,0.0001,0.01,16,0.05,10000,100,0.15,-1)
