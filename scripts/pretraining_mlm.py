@@ -10,7 +10,7 @@ import sys
 from random import choice
 def pretraining(num_proc, train_datasets_path,eval_datasets_path, bert_tokenizer_path, bert_model_path, output_path,
                 per_device_train_batch_size, learning_rate, weight_decay,num_train_epochs,warmup_ratio,save_steps,
-                save_total_limit, mlm_probability,args_local_rank,term_enhance_type,definitions_prompt_path,gradient_accumulation_steps,term_refs_path):
+                save_total_limit, mlm_probability,args_local_rank,gradient_accumulation_steps):
     # 1.tokenizer
     tokenizer_checkpoint = bert_tokenizer_path
     bert_tokenizer = AutoTokenizer.from_pretrained(tokenizer_checkpoint)   
@@ -80,12 +80,9 @@ if __name__=='__main__':
     save_steps = sys.argv[12]
     save_total_limit = sys.argv[13]
     mlm_probability = sys.argv[14]
-    term_enhance_type = sys.argv[15]
     args_local_rank = int(os.environ["LOCAL_RANK"])
-    definitions_prompt_path=sys.argv[16]
-    gradient_accumulation_steps=sys.argv[17]
-    term_refs_path=sys.argv[18]
+    gradient_accumulation_steps=sys.argv[15]
     pretraining(int(num_proc), train_datasets_path, eval_datasets_path, bert_tokenizer_path, bert_model_path, output_path,
                 int(per_device_train_batch_size), float(learning_rate), float(weight_decay), int(num_train_epochs),
                 float(warmup_ratio), int(save_steps),
-                int(save_total_limit), float(mlm_probability),int(args_local_rank),str(term_enhance_type),str(definitions_prompt_path),int(gradient_accumulation_steps),str(term_refs_path))
+                int(save_total_limit), float(mlm_probability),int(args_local_rank),int(gradient_accumulation_steps))
