@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="/BIGLOG.png" alt="logo" width=200 height=200 />
+    <img src="/BIGLOG.png" alt="logo" width=400 height=400 />
 </p>
 
 ## 📃 Note
