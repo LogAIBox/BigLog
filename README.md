@@ -1,36 +1,7 @@
 <p align="center">
-    <img src="BIGLOG.png" alt="logo" width=200 height=200 />
+    <img src="/BIGLOG.png" alt="logo" width=200 height=200 />
 </p>
-<h1 align="center">pyecharts</h1>
-<p align="center">
-    <em>Python ❤️ ECharts = pyecharts</em>
-</p>
-<p align="center">
-    <a href="https://github.com/pyecharts/pyecharts/actions">
-        <img src="https://github.com/pyecharts/pyecharts/actions/workflows/python-app.yml/badge.svg" alt="Github Actions Status">
-    </a>
-    <a href="https://codecov.io/gh/pyecharts/pyecharts">
-        <img src="https://codecov.io/gh/pyecharts/pyecharts/branch/master/graph/badge.svg" alt="Codecov">
-    </a>
-    <a href="https://badge.fury.io/py/pyecharts">
-        <img src="https://badge.fury.io/py/pyecharts.svg" alt="Package version">
-    </a>
-    <a href="https://pypi.org/project/pyecharts/">
-        <img src="https://img.shields.io/pypi/pyversions/pyecharts.svg?colorB=brightgreen" alt="PyPI - Python Version">
-    </a>
-</p>
-<p align="center">
-    <a href="https://pypi.org/project/pyecharts">
-        <img src="https://img.shields.io/pypi/format/pyecharts.svg" alt="PyPI - Format">
-    </a>
-     <a href="https://github.com/pyecharts/pyecharts/pulls">
-        <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" alt="Contributions welcome">
-    </a>
-    <a href="https://opensource.org/licenses/MIT">
-        <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" alt="License">
-    </a>
-</p>
-
+<h1 align="center">Biglog: Big Model for a Unified Log Analysis Framework Pre-trained with Numerous Unlabelled Log Data</h1>
 ## 📣 Introduction
 
 [Apache ECharts](https://github.com/apache/echarts) is easy-to-use, highly interactive and highly performant javascript visualization library under Apache license. Since its first public release in 2013, it now dominates over 74% of Chinese web front-end market. Yet Python is an expressive language and is loved by data science community. Combining the strength of both technologies, [pyecharts](https://github.com/pyecharts/pyecharts) is born.
