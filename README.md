@@ -19,7 +19,7 @@ $ pip install transformers
 ## 📝 Usage
 ### Pre-training with your own logs
 ```
-$ python pretraining_mlm.py [NUM_OF_PROC] [TRAIN_DATA_PATH] [EVAL_DATA_PATH] [TOKENIZER_DATA_PATH] [INITIAL_CHECK_POINT] [OUTPUT_PATH] [BATCH_SIZE] [LEARNING_RATE] [WEIGHT_DECAY] [EPOCH] [WARM_UP_RATIO] [SAVE_STEPS] [SAVE_TOTAL_LIMIT] [MLM_PROBABILITY] [GRADIENT_ACC]
+$ python /scripts/pretraining_mlm.py [NUM_OF_PROC] [TRAIN_DATA_PATH] [EVAL_DATA_PATH] [TOKENIZER_DATA_PATH] [INITIAL_CHECK_POINT] [OUTPUT_PATH] [BATCH_SIZE] [LEARNING_RATE] [WEIGHT_DECAY] [EPOCH] [WARM_UP_RATIO] [SAVE_STEPS] [SAVE_TOTAL_LIMIT] [MLM_PROBABILITY] [GRADIENT_ACC]
 ```
 NUM_OF_PROC: number of process used in data loading  
 TRAIN_DATA_PATH: train data path  
@@ -36,46 +36,27 @@ SAVE_STEPS: model save frequency
 SAVE_TOTAL_LIMIT: limitation of saved models  
 MLM_PROBABILITY:  mask probability  
 GRADIENT_ACC: gradient accumulation steps  
-## ⛏ Software development
 
-### Unit tests
-
-```shell
-$ pip install -r test/requirements.txt
-$ make
+### Use Biglog to acquire log embeddings
+(1) load Biglog tokenizer
 ```
-
-### Team development
-
-[Travis CI](https://travis-ci.org/) and [AppVeyor](https://ci.appveyor.com/) is place for continuous integration.
-
-### Coding styles
-
-[flake8](http://flake8.pycqa.org/en/latest/index.html), [Codecov](https://codecov.io/) and [pylint](https://www.pylint.org/) are used
-
-## 😉 Author
-
-pyecharts are co-maintained by:
-
-* [@chenjiandongx](https://github.com/chenjiandongx)
-* [@chfw](https://github.com/chfw)
-* [@kinegratii](https://github.com/kinegratii)
-* [@sunhailin-Leo](https://github.com/sunhailin-Leo)
-
-For more contributors, please visit [pyecharts/graphs/contributors](https://github.com/pyecharts/pyecharts/graphs/contributors)
-
-## 💌 Donation
-
-To develop and maintain pyecharts, it took me a lot of overnights. If you think pyecharts has helped you, please consider buying me a coffee:
-
-<img src="https://user-images.githubusercontent.com/19553554/35425853-500d6b5c-0299-11e8-80a1-ebb6629b497e.png" width="19.8%" alt="Alipay">　　　<img src="https://user-images.githubusercontent.com/19553554/35425854-504e716a-0299-11e8-81fc-4a511f1c47e8.png" width="20%" alt="Wechat">
-
-
-Please also buy the other maintainer a coffee if you think their work helped you too [donation details](http://pyecharts.org/#/zh-cn/donate)
-
-## 📃 License
-
-MIT [©chenjiandongx](https://github.com/chenjiandongx)
+from transformers import AutoTokenizer
+biglog_tokenizer = AutoTokenizer.from_pretrained('/pretrained')
+```
+(2) load pre-trained Biglog
+```
+from transformers import BertModel
+model = BertModel.from_pretrained('/pretrained')
+```
+(3) tokenize log data
+```
+tokenized_data=biglog_tokenizer(YOUR_DATA,padding = "longest",truncation=True,max_length=150)
+```
+(4) get embeddings
+```
+out=model(torch.tensor(tokenized_data['input_ids']))
+log_embedding=out[0]
+```
 
 
 
