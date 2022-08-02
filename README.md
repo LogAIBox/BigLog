@@ -4,6 +4,7 @@
 <h1 align="center">Biglog</h1>
 ## Note
 You should download **pytorch_model.bin** file from  https://drive.google.com/file/d/12phqzt2QiAHjaO-BUDSyzNcmdg835rJG/view?usp=sharing  and replace the **pretrained/pytorch_model.bin** file.
+
 ## 📣 Introduction
 Biglog is a unified log analysis framework that utilizes a pre-trained language model as the encoder to produce a domain-agnostic representations of input logs and integrates downstream modules to perform specific log tasks.
 ## ✨ Implementation Details
