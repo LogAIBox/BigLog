@@ -17,7 +17,25 @@ In pre-trained phase, 8 V100 GPUs (32GB memory) is used. The model is pre-traine
 $ pip install transformers
 ```
 ## 📝 Usage
-### Pre-training
+### Pre-training with your own logs
+```
+$ python pretraining_mlm.py [NUM_OF_PROC] [TRAIN_DATA_PATH] [EVAL_DATA_PATH] [TOKENIZER_DATA_PATH] [INITIAL_CHECK_POINT] [OUTPUT_PATH] [BATCH_SIZE] [LEARNING_RATE] [WEIGHT_DECAY] [EPOCH] [WARM_UP_RATIO] [SAVE_STEPS] [SAVE_TOTAL_LIMIT] [MLM_PROBABILITY] [GRADIENT_ACC]
+```
+NUM_OF_PROC: number of process used in data loading  
+TRAIN_DATA_PATH: train data path  
+EVAL_DATA_PATH: evaluate data path  
+TOKENIZER_DATA_PATH: biglog tokenizer path  
+INITIAL_CHECK_POINT: initial checkpoint  
+OUTPUT_PATH: model save path  
+BATCH_SIZE: batch size  
+LEARNING_RATE: lr  
+WEIGHT_DECAY: weight decay  
+EPOCH: total epoch  
+WARM_UP_RATIO: ratio of warm up for pre-training  
+SAVE_STEPS: model save frequency  
+SAVE_TOTAL_LIMIT: limitation of saved models  
+MLM_PROBABILITY:  mask probability  
+GRADIENT_ACC: gradient accumulation steps  
 ## ⛏ Software development
 
 ### Unit tests
