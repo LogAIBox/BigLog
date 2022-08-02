@@ -744,7 +744,7 @@ class DataCollatorForLanguageModeling_for_biglog(DataCollatorMixin):
             "Or set `return_special_tokens_mask=True` when calling the encoding method "
             "to get the special tokens mask in any tokenizer. "
         )
-        big_log_ids=[1,2,3,4,5]#不去除biglog 相关special id 的mask概率
+        big_log_ids=[1,2,3,4,5]
         all_special_ids = self.tokenizer.all_special_ids  # cache the property
         for id_ in big_log_ids: 
             all_special_ids.remove(id_)
