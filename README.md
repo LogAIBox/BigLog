@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="/BIGLOG.png" alt="logo" width=200 height=200 />
+    <img src="BIGLOG.png" alt="logo" width=200 height=200 />
 </p>
 <h1 align="center">pyecharts</h1>
 <p align="center">
