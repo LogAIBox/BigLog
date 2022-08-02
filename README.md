@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/BiglogOpenSource/PretrainedModel/main/BIGLOG.png" alt="logo" width=200 height=200 />
+    <img src="https://www.canva.cn/design/DAFIJ2VFI64/zbNOO8mhi6gQC-5FQSDchQ/view?utm_content=DAFIJ2VFI64&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink" alt="logo" width=200 height=200 />
 </p>
 <h1 align="center">pyecharts</h1>
 <p align="center">
