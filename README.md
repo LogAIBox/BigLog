@@ -1,7 +1,6 @@
 <p align="center">
     <img src="/BIGLOG.png" alt="logo" width=200 height=200 />
 </p>
-<h1 align="center">Biglog</h1>
 
 ## 📃 Note
 
