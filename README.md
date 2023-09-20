@@ -7,7 +7,7 @@
 You should download **pytorch_model.bin** file from  https://drive.google.com/file/d/12phqzt2QiAHjaO-BUDSyzNcmdg835rJG/view?usp=sharing  and replace the **pretrained/pytorch_model.bin** file.
 
 ## 📣 Introduction
-Biglog is a unified log analysis framework that utilizes a pre-trained language model as the encoder to produce a domain-agnostic representations of input logs and integrates downstream modules to perform specific log tasks.
+Biglog is a unified log analysis framework that utilizes a pre-trained language model as the encoder to produce a domain-agnostic representations of input logs and integrates downstream modules to perform specific log tasks. This is the official repository for paper 《Biglog: Unsupervised Large-scale Pre-training for a Unified Log Representation》, published at IWQoS 2023.
 ## ✨ Implementation Details
 In pre-trained phase, 8 V100 GPUs (32GB memory) is used. The model is pre-trained with 10K steps of parameters updating and a learning rate 2e-4. Batch size is 512 and the MLM probability is 0.15. Warm-up ratio is 0.05 and weight_decay is 0.01. For the fine-tuning of specific analysis tasks, since only a few parameters in classification heads or pooling layers need updating, only 1 or 2 V100 GPUs (16GB memory) are utilized and the fine-tuning process is within 2 epochs of traversing the dataset. Depending on the complexity of different tasks, learning rate is set between 0.5e-4 and 10e-4 and the batch size is 8 or 32. 
 ## 🔰 Installation
@@ -57,6 +57,15 @@ tokenized_data=biglog_tokenizer(YOUR_DATA,padding = "longest",truncation=True,ma
 out=model(torch.tensor(tokenized_data['input_ids']))
 log_embedding=out[0]
 ```
-
-
-
+## Citation
+```
+@INPROCEEDINGS{10188759,
+  author={Tao, Shimin and Liu, Yilun and Meng, Weibin and Ren, Zuomin and Yang, Hao and Chen, Xun and Zhang, Liang and Xie, Yuming and Su, Chang and Oiao, Xiaosong and Tian, Weinan and Zhu, Yichen and Han, Tao and Qin, Ying and Li, Yun},
+  booktitle={2023 IEEE/ACM 31st International Symposium on Quality of Service (IWQoS)}, 
+  title={Biglog: Unsupervised Large-scale Pre-training for a Unified Log Representation}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-11},
+  doi={10.1109/IWQoS57198.2023.10188759}}
+```
